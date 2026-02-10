@@ -1,0 +1,13 @@
+{
+  "tableName": "songs",
+  "tableType": "OFFLINE",
+  "segmentsConfig": {
+    "replication": "1",
+    "schemaName": "songs"
+  },
+  "tenants": {},
+  "tableIndexConfig": {
+    "loadMode": "MMAP"
+  },
+  "metadata": {}
+}

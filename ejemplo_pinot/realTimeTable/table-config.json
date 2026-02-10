@@ -1,0 +1,24 @@
+{
+  "tableName": "sensorData",
+  "tableType": "REALTIME",
+  "segmentsConfig": {
+    "timeColumnName": "timestamp",
+    "replicasPerPartition": "1",
+    "schemaName": "sensorData"
+  },
+  "tenants": {},
+  "tableIndexConfig": {
+    "loadMode": "MMAP",
+    "streamConfigs": {
+      "streamType": "kafka",
+      "stream.kafka.consumer.type": "lowlevel",
+      "stream.kafka.topic.name": "sensor-data",
+      "stream.kafka.broker.list": "kafka:9092",
+      "stream.kafka.consumer.factory.class.name": "org.apache.pinot.plugin.stream.kafka20.KafkaConsumerFactory",
+      "stream.kafka.decoder.class.name": "org.apache.pinot.plugin.stream.kafka.KafkaJSONMessageDecoder",
+      "realtime.segment.flush.threshold.rows": "10000",
+      "realtime.segment.flush.threshold.time": "1h"
+    }
+  },
+  "metadata": {}
+}
